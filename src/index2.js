@@ -125,6 +125,12 @@ function showTemp(response) {
   let currentCity = response.data.name;
   let changeCurrentCity = document.querySelector("#current-city");
   changeCurrentCity.innerHTML = currentCity;
+  let iconId = response.data.weather[0].icon;
+  let changeIcon = document.querySelector("#weather-icon-today");
+  changeIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconId}@2x.png`
+  );
   console.log(response);
 }
 // Change conditions to current city START
@@ -137,9 +143,6 @@ function showConditions(response) {
     response.data.main.temp_max
   )}ºf, low: ${Math.round(response.data.main.temp_min)}ºf`;
 
-  /*  let currentPrecip = document.querySelector("#precip");
-  currentPrecip.innerHTML = `chance of rain: ${response.data.weather[0].icon}`;
- */
   let currentHumidity = document.querySelector("#humidity");
   currentHumidity.innerHTML = `humidity: ${Math.round(
     response.data.main.humidity
