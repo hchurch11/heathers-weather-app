@@ -170,7 +170,7 @@ button {
 
 /* changes the main weather icon animation */
 
-#weatherIconToday {
+#weather-icon-today {
     height: 50px;
     width: 50px;
     animation: wiggle1 2s alternate linear infinite both;
@@ -189,7 +189,7 @@ button {
 
 /* changes the future weather icon animation */
 
-#weatherIconFuture {
+.weatherIconFuture {
     animation: wiggle2 5s alternate linear infinite both;
 }
 

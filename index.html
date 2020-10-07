@@ -26,7 +26,7 @@
                     <a class="tempToday" href="#" id="celsius-link">| ºc</a>
 
 
-                    <li class="weatherIcon" id="weatherIconToday"> <img src="./images/icons8-sun.png" /></li>
+                    <li class="weatherIcon"> <img id="weather-icon-today" src="./images/icons8-sun.png" /></li>
                     <li class="city" id="current-city">-</li>
                     <form class="button" id="search-form">
                         <input type="text" id="search-input" placeholder="city, state" autocomplete="off">
@@ -39,47 +39,50 @@
                 <div>
                     <ul id="content">
                         <li class="conditions" id="sky">mostly sunny</li>
-                        <li class="conditions" id="high-low">low: 66</li>
+                        <li class="conditions" id="high-low">high: - / low: - </li>
                         <!--   <li class="conditions" id="precip">precipitation: 0%</li> -->
-                        <li class="conditions" id="humidity">humidity: 20%</li>
-                        <li class="conditions" id="wind">wind: 7mph nne</li>
+                        <li class="conditions" id="humidity">humidity: -%</li>
+                        <li class="conditions" id="wind">wind: -mph</li>
                     </ul>
                 </div>
                 <a class="btn" id="showMore">show more</a>
             </div>
             <div class="col-2 fiveDayForcast">
                 <ul>
-                    <li class="dayOfWeek">monday</li>
-                    <li><img class="weatherIcon" id="weatherIconFuture" src="./images/icons8-sun.png"></li>
-                    <li class="futureTemp"> 84º/57º f</li>
+                    <li class="dayOfWeek" id="day-one">monday</li>
+                    <li><img class="weatherIconFuture" id="future-weather-icon-one" src="./images/icons8-sun.png"></li>
+                    <li class="futureTemp" id="temp-day-one"> 84º/57º f</li>
                 </ul>
             </div>
             <div class="col-3 fiveDayForcast">
                 <ul>
-                    <li class="dayOfWeek">tuesday</li>
-                    <li><img class="weatherIcon" id="weatherIconFuture" src="./images/icons8-sun.png"></li>
-                    <li class="futureTemp"> 73º/48º f</li>
+                    <li class="dayOfWeek" id="day-two">tuesday</li>
+                    <li><img class="weatherIconFuture" id="future-weather-icon-two" src="./images/icons8-sun.png"></li>
+                    <li class="futureTemp" id="temp-day-two"> 73º/48º f</li>
                 </ul>
             </div>
             <div class="col-4 fiveDayForcast">
                 <ul>
-                    <li class="dayOfWeek">wednesday</li>
-                    <li><img class="weatherIcon" id="weatherIconFuture" src="./images/icons8-sun.png"></li>
-                    <li class="futureTemp"> 52º/40º f</li>
+                    <li class="dayOfWeek" id="day-three">wednesday</li>
+                    <li><img class="weatherIconFuture" id="future-weather-icon-three" src="./images/icons8-sun.png">
+                    </li>
+                    <li class="futureTemp" id="temp-day-three"> 52º/40º f</li>
                 </ul>
             </div>
             <div class="col-5 fiveDayForcast">
                 <ul>
-                    <li class="dayOfWeek">thursday</li>
-                    <li><img class="weatherIcon" id="weatherIconFuture" src="./images/icons8-rain.png"></li>
-                    <li class="futureTemp"> 52º/40º f</li>
+                    <li class="dayOfWeek" id="day-four">thursday</li>
+                    <li><img class="weatherIconFuture" id="future-weather-icon-four" src="./images/icons8-rain.png">
+                    </li>
+                    <li class="futureTemp" id="temp-day-four"> 52º/40º f</li>
                 </ul>
             </div>
             <div class="col-6 fiveDayForcast">
                 <ul>
-                    <li class="dayOfWeek">friday</li>
-                    <li><img class="weatherIcon" id="weatherIconFuture" src="./images/icons8-cloud_lightning.png"></li>
-                    <li class="futureTemp"> 52º/40º f</li>
+                    <li class="dayOfWeek" id="day-five">friday</li>
+                    <li><img class="weatherIconFuture" id="future-weather-icon-five"
+                            src="./images/icons8-cloud_lightning.png"></li>
+                    <li class="futureTemp" id="temp-day-five"> 52º/40º f</li>
                 </ul>
             </div>
             <div class="col-7">
