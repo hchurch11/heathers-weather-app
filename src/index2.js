@@ -45,18 +45,22 @@ formatDate(); //Function to show current time and date END
 function convertCelsToFahr(event) {
   event.preventDefault();
   let tempToday = document.querySelector("#temp-today");
+  fahrLink.classList.add("active");
+  celsLink.classList.remove("active");
   let temperature = tempToday.innerHTML;
   temperature = Number(temperature);
   tempToday.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
 
-let fahr = document.querySelector("#fahrenheit-link");
-fahr.addEventListener("click", convertCelsToFahr);
+let fahrLink = document.querySelector("#fahrenheit-link");
+fahrLink.addEventListener("click", convertCelsToFahr);
 
 //Convert to Celsius
 function convertFahrToCels(event) {
   event.preventDefault();
   let tempToday = document.querySelector("#temp-today");
+  celsLink.classList.add("active");
+  fahrLink.classList.remove("active");
   let temperature = tempToday.innerHTML;
   let celsiusTemp = Math.round(((temperature - 32) * 5) / 9);
   tempToday.innerHTML = celsiusTemp;

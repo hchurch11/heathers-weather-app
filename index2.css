@@ -13,7 +13,11 @@ li {
 
 #fahrenheit-link, #celsius-link {
     display: inline-block;
-    font-size: 12px;
+    font-size: 20px;
+}
+
+.active {
+    text-decoration: underline;
 }
 
 input {
