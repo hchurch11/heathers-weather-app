@@ -42,19 +42,7 @@ formatDate(); //Function to show current time and date END
 
 //add fº and cº converter
 // Covert to Fahrenheit
-function convertFahr(event) {
-  event.preventDefault();
-  let tempToday = document.querySelector("#temp-today");
-  let temperature = tempToday.innerHTML;
-  temperature = Number(temperature);
-  tempToday.innerHTML = Math.round((temperature - 32) * (5 / 9));
-}
-
-let fahr = document.querySelector("#fahrenheit-link");
-fahr.addEventListener("click", convertFahr);
-
-//Convert to Celsius
-function convertCels(event) {
+function convertCelsToFahr(event) {
   event.preventDefault();
   let tempToday = document.querySelector("#temp-today");
   let temperature = tempToday.innerHTML;
@@ -62,8 +50,20 @@ function convertCels(event) {
   tempToday.innerHTML = Math.round((temperature * 9) / 5 + 32);
 }
 
-let cels = document.querySelector("#celsius-link");
-cels.addEventListener("click", convertCels);
+let fahr = document.querySelector("#fahrenheit-link");
+fahr.addEventListener("click", convertCelsToFahr);
+
+//Convert to Celsius
+function convertFahrToCels(event) {
+  event.preventDefault();
+  let tempToday = document.querySelector("#temp-today");
+  let temperature = tempToday.innerHTML;
+  let celsiusTemp = Math.round(((temperature - 32) * 5) / 9);
+  tempToday.innerHTML = celsiusTemp;
+}
+
+let celsLink = document.querySelector("#celsius-link");
+celsLink.addEventListener("click", convertFahrToCels);
 
 function getCurrentCity() {
   let searchInput = document.querySelector("#search-input");
@@ -94,6 +94,7 @@ function getGeoPosition(event) {
 
 let findMeButton = document.querySelector("#find-me-button");
 findMeButton.addEventListener("click", getGeoPosition);
+
 //GEOLOCATION SHOW TEMPERATURE END
 
 async function fetchCityWeather(event) {
@@ -106,7 +107,6 @@ async function fetchCityWeather(event) {
 
   try {
     const response = await axios.get(apiUrl);
-    console.log(response);
     showTemp(response);
     showConditions(response);
     /*   displayCurrentCity(currentCity); */
@@ -121,7 +121,7 @@ searchForm.addEventListener("submit", fetchCityWeather);
 
 function showTemp(response) {
   let currentTemp = document.querySelector("#temp-today");
-  currentTemp.innerHTML = Math.round(response.data.main.temp) + "ºf";
+  currentTemp.innerHTML = Math.round(response.data.main.temp);
   let currentCity = response.data.name;
   let changeCurrentCity = document.querySelector("#current-city");
   changeCurrentCity.innerHTML = currentCity;
@@ -131,7 +131,6 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${iconId}@2x.png`
   );
-  console.log(response);
 }
 // Change conditions to current city START
 function showConditions(response) {
